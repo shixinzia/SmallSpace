@@ -1,45 +1,47 @@
-# SmallSpace Addon
-This addon allows you to have more space in one block
+# SmallSpace 小世界
 
-## Show Case
+该附属允许你在方块内部拥有更多的空间。
+
+<p align="center">
+  <a href="https://builds.guizhanss.net/SlimefunGuguProject/SmallSpace/master/">
+    <img src="https://builds.guizhanss.net/f/SlimefunGuguProject/SmallSpace/master/badge.svg" alt="SmallSpace"/>
+  </a>
+</p>
+
+## 展示
 <p align="center"><img alt="image" src="https://user-images.githubusercontent.com/87692752/236276843-38ade5d9-36f1-47de-ab4d-96b2ea5eaf05.png"></p>
 
-### Sized Block
-This block is the core of this addon - you can access your space by rightclicking
-                                     - you can add [Small Space Interface](https://github.com/CAPS123987/SmallSpace#small-space-interface) to access import/export busses
-[How to use](https://github.com/CAPS123987/SmallSpace#how-to-use-sized-block)
+### 小世界空间
+
+这种方块是本附属的核心内容。你可以右键点击来进行访问。通过空间接口来进行物品传输。
 
 <p align="center"><img alt="image" src="https://user-images.githubusercontent.com/87692752/236265631-a567832a-84bb-4d10-b0a4-26d4f912b883.png"></p>
 <p align="center"><img alt="image" src="https://user-images.githubusercontent.com/87692752/236265512-962f7c97-5d6b-4e88-a567-eed3fc1f2e80.png"></p>
 
-### How to use Sized Block
-Steps:
-1.  Put [Sized Block](https://github.com/CAPS123987/SmallSpace#sized-block) in [Block Assigner](https://github.com/CAPS123987/SmallSpace#block-assigner)
-2.  Place [Sized Block](https://github.com/CAPS123987/SmallSpace#sized-block) to energy network and right click it
-3.  Build Anythink you want
-4.  For additional function you can go back by rightclicking gold block in your space and shift+rightclick with [Small Space Interface](https://github.com/CAPS123987/SmallSpace#small-space-interface) on [Sized Block](https://github.com/CAPS123987/SmallSpace#sized-block) to have import/export busses
+### 如何使用小世界空间
+步骤:
+1.  将**小世界空间**放入**空间绑定器**中。
+2.  将**小世界空间**接入能源网络，并右键点击。
+3.  开始造东西吧
+4.  右键点击金块可以返回，潜行+右键点击来放置空间接口。
 
-### Small Space Interface
-This Block allows you to access import/export busses in your space
-[How to use](https://github.com/CAPS123987/SmallSpace#how-to-use-small-space-interface)
+### 空间接口
 
+该方块用于访问**小世界空间**的物品输入/输出。
 <p align="center"><img alt="image" src="https://user-images.githubusercontent.com/87692752/236272880-96aae5a8-52fa-4ef3-b86b-927ae1a39e04.png"></p>
 <p align="center"><img alt="image" src="https://user-images.githubusercontent.com/87692752/236272976-d423adbb-189d-4698-ae15-020744ad8cb4.png"></p>
 
-### How to use Small Space Interface
-1.  Shift+rightclick on [Sized Block](https://github.com/CAPS123987/SmallSpace#sized-block)
-2.  Right click [Sized Block](https://github.com/CAPS123987/SmallSpace#sized-block) to load chunks
-3.  Go back by rightclicking gold block in your space
-4.  Put any item in input(left) and it will go to your space. Import/export bus will spawn in your space. In your space you can get your items in stone block and put items in magma block. That will put them back in [Small Space Interface](https://github.com/CAPS123987/SmallSpace#small-space-interface)
+### 如何使用空间接口
+1.  潜行右键点击**小世界空间**
+2.  右键点击**小世界空间**以加载小世界
+3.  右键点击小世界中的金块返回
+4.  接口左侧放入的物品将进入小世界中。在小世界中，你可以通过石块获得外界的物品，通过岩浆块送出物品。
 
+### 空间绑定器
 
-### Block Assigner
-This machine is used to assign id to [Sized Block](https://github.com/CAPS123987/SmallSpace#sized-block)
+该机器用于绑定**小世界空间**。
 <p align="center"><img alt="image" src="https://user-images.githubusercontent.com/87692752/236274059-9c159054-c321-434a-9801-f6b3bec07ffa.png"></p>
 <p align="center"><img alt="image" src="https://user-images.githubusercontent.com/87692752/236273793-1cd18299-1335-45b9-a71d-ae99920f2922.png"></p>
-
-## Download
-[![Build Status](https://thebusybiscuit.github.io/builds/Sefiraat/Cultivation/main/badge.svg)](https://thebusybiscuit.github.io/builds/CAPS123987/SmallSpace/master/)
 
 ## Thanks!
 
