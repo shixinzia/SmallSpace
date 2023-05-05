@@ -76,7 +76,7 @@ EnergyNetComponent{
         		ItemMeta meta = menu.getItemInSlot(20).getItemMeta();
         		List<String> lore = new ArrayList<String>();
         		
-        		if(!meta.getLore().get(0).contains("Put to Block Assigner")) {return;}
+        		if(!meta.getLore().get(0).contains("放入空间绑定器")) {return;}
         		if(menu.getItemInSlot(24)==null){
 	        		long max = cfg.getLong("max");
 	        		lore.add(String.valueOf(max));
