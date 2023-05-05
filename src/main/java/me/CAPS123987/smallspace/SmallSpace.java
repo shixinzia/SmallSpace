@@ -3,8 +3,10 @@ package me.CAPS123987.smallspace;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import net.guizhanss.guizhanlibplugin.updater.GuizhanUpdater;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -50,19 +52,16 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
 	Config cfg = new Config(this);
     @Override
     public void onEnable() {
+
+		if (!getServer().getPluginManager().isPluginEnabled("GuizhanLibPlugin")) {
+			getLogger().log(Level.SEVERE, "本插件需要 鬼斩前置库插件(GuizhanLibPlugin) 才能运行!");
+			getLogger().log(Level.SEVERE, "从此处下载: https://50l.cc/gzlib");
+			getServer().getPluginManager().disablePlugin(this);
+			return;
+		}
     	
-        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("DEV - ")) {
-        	
-        	GitHubBuildsUpdater
-        	updater 
-        	= 
-        	new GitHubBuildsUpdater(
-        			this
-        			, this.getFile()
-        			, "CAPS123987/SmallSpace/master");
-        	
-        	updater.start();
-        	
+        if (cfg.getBoolean("options.auto-update") && getDescription().getVersion().startsWith("Build")) {
+			GuizhanUpdater.start(this, getFile(), "SlimefunGuguProject", "SmallSpace", "master");
         }
     	
     	instance = this;
@@ -137,7 +136,7 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
     	
 	    	case "tptoId":
 	    		if (!p.hasPermission("SmallSpace.admin")) {
-	        		p.sendMessage(ChatColor.RED+"No permition");
+	        		p.sendMessage(ChatColor.RED+"你没有权限");
 	        		return false;
 	        	}
 	    		if(p instanceof Player) {
@@ -145,7 +144,7 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
 		    			String id = args[1];
 		    			int value = Integer.parseInt(id.replaceAll("[^0-9]", ""));
 		    			}catch(Exception e) {
-		    			p.sendMessage("Please enter Id of space");
+		    			p.sendMessage("需要提供小世界的ID");
 		    			return true;
 		    		}
 		    		String id = args[1];
@@ -161,14 +160,14 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
 	    		
 	    	case "blockId":
 	    		if (!p.hasPermission("SmallSpace.admin")) {
-	        		p.sendMessage(ChatColor.RED+"No permition");
+	        		p.sendMessage(ChatColor.RED+"你没有权限");
 	        		return false;
 	        	}
 	    		try {
 	    			String id1 = args[1];
 	    			int value1 = Integer.parseInt(id1.replaceAll("[^0-9]", ""));
 	    			}catch(Exception e) {
-	    			p.sendMessage("Please enter Id of space");
+	    			p.sendMessage("需要提供小世界的ID");
 	    			return true;
 	    		}
 	    		String id1 = args[1];
@@ -180,14 +179,14 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
 	    		
 	    	case "unblockId":
 	    		if (!p.hasPermission("SmallSpace.admin")) {
-	        		p.sendMessage(ChatColor.RED+"No permition");
+	        		p.sendMessage(ChatColor.RED+"没有权限");
 	        		return false;
 	        	}
 	    		try {
 	    			String id2 = args[1];
 	    			int value2 = Integer.parseInt(id2.replaceAll("[^0-9]", ""));
 	    			}catch(Exception e) {
-	    			p.sendMessage("Please enter Id of space");
+	    			p.sendMessage("需要提供小世界的ID");
 	    			return true;
 	    		}
 	    		String id2 = args[1];
@@ -199,7 +198,7 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
 	    		
 	    	case "teleportRemove":
 	    		if (!p.hasPermission("SmallSpace.admin")) {
-	        		p.sendMessage(ChatColor.RED+"No permition");
+	        		p.sendMessage(ChatColor.RED+"你没有权限");
 	        		return false;
 	        	}
 	    		if(!(p instanceof Player)) {
@@ -211,11 +210,11 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
 	    		pp = (Player) p;
 	    		Block b =pp.getTargetBlockExact(20);
 	    		if(!BlockStorage.hasBlockInfo(b)) {
-	    			p.sendMessage("this block doesn't have BlockStorage data");
+	    			p.sendMessage("该方块没有信息");
 	    			return true;
 	    		}
 	    		if(!BlockStorage.getLocationInfo(b.getLocation(),"id").equals("TELEPORT")) {
-	    			p.sendMessage("this block is not teleporter");
+	    			p.sendMessage("该方块不是传送方块");
 	    			return true;
 	    		}
 	    		BlockStorage.clearBlockInfo(b);
@@ -244,7 +243,7 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
 		    		return true;
 	    	
 	    	default:
-	    		p.sendMessage("Unknown command");
+	    		p.sendMessage("未知指令");
     	}
     	
     	return true;
@@ -254,7 +253,7 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
     	World world = Bukkit.getWorld("SmallSpace");
     	Location newloc2 = new Location(world,l.getX()+0.5,l.getY()+1,l.getZ()+0.5);
     	if(newloc2.getBlock().getType()==Material.BEDROCK) {
-    		p.sendMessage("Space is not initialized yet");
+    		p.sendMessage("小世界未初始化");
     		return;
     	}
     	Player p2 = (Player) p;
@@ -262,7 +261,7 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
     	
     }
     public void notSeder(CommandSender p) {
-    	p.sendMessage("You must by Player to use this command");
+    	p.sendMessage("只有玩家才能执行该指令");
     }
     
     
@@ -272,7 +271,7 @@ public class SmallSpace extends JavaPlugin implements SlimefunAddon {
     	final Player pp = (Player) p;
 		Block b =pp.getTargetBlockExact(20);
 		if(!BlockStorage.hasBlockInfo(b)) {
-			p.sendMessage("this block doesn't have BlockStorage data");
+			p.sendMessage("该方块没有信息");
 			return false;
 		}
 

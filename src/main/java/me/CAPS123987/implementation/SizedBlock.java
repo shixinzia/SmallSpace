@@ -101,24 +101,24 @@ public class SizedBlock extends SimpleSlimefunItem<BlockTicker> implements Energ
 				Location newloc3 = new Location(world,loc.getX()+0.5,loc.getY()-1,loc.getZ()+0.5);
 				
 				if(!(e.getPlayer().getName().equals(owner)|| e.getPlayer().hasPermission("SmallSpace.admin") || Calculator.playersGet(BlockStorage.getLocationInfo(e.getClickedBlock().get().getLocation(), "Players")).contains(e.getPlayer().getName()))) {
-					e.getPlayer().sendMessage(ChatColor.RED+"You are not the owner or member of this space!");
+					e.getPlayer().sendMessage(ChatColor.RED+"你无法进入该空间!");
 					return;
 				}
 				
 				if(e.getPlayer().isSneaking()) {
 					if(loc.getBlock().getType() == Material.BEDROCK) {
-						e.getPlayer().sendMessage(ChatColor.RED+"Your space was never initialized try right click");
+						e.getPlayer().sendMessage(ChatColor.RED+"你的小世界暂未初始化,尝试右键一下?");
 						return;
 					}
 					if(loc.getBlock().getType() == Material.BARRIER) {
-						e.getPlayer().sendMessage(ChatColor.DARK_RED+"Sorry your space is disabled");
+						e.getPlayer().sendMessage(ChatColor.DARK_RED+"你的小世界被禁用了");
 						return;
 					}
 					
 					newloc2.getBlock().setType(Material.AIR);
 					newloc22.getBlock().setType(Material.AIR);
 					newloc222.getBlock().setType(Material.AIR);
-					e.getPlayer().sendMessage("Blocks were removed");
+					e.getPlayer().sendMessage("已移除方块");
 				}else {
 					if(loc.getBlock().getType() == Material.BEDROCK) {
 						switch(value) {
@@ -149,7 +149,7 @@ public class SizedBlock extends SimpleSlimefunItem<BlockTicker> implements Energ
 					}
 					
 					if(newloc.getBlock().getType()==Material.BARRIER) {
-						e.getPlayer().sendMessage(ChatColor.DARK_RED+"Sorry your space is disabled");
+						e.getPlayer().sendMessage(ChatColor.DARK_RED+"你的小世界被禁用了");
 						return;
 					}
 					if(newloc2.getBlock().getType()==Material.AIR && newloc22.getBlock().getType()==Material.AIR&& newloc222.getBlock().getType()==Material.AIR) {
@@ -158,7 +158,7 @@ public class SizedBlock extends SimpleSlimefunItem<BlockTicker> implements Energ
 						e.getPlayer().teleport(newloc);
 						
 					}else {
-						e.getPlayer().sendMessage(ChatColor.RED+"Spawn Location in your space is obstructed! To remove Blocks press Shift and right click this again");
+						e.getPlayer().sendMessage(ChatColor.RED+"小世界已经就绪! 潜行并右键点击方块以移除");
 						return;
 					}
 					

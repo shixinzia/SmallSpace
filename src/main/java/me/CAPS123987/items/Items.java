@@ -16,42 +16,43 @@ import me.CAPS123987.smallspace.*;
 public class Items {
 	public static final ItemGroup smallSpace = new ItemGroup(new NamespacedKey(SmallSpace.getInstance(),
 	        "Small_Space"),
-	        new CustomItemStack(Material.TUFF, "&aSmall Space")
+	        new CustomItemStack(Material.TUFF, "&a小世界")
 	    );
 	public static final SlimefunItemStack SIZED_BLOCK1 = new SlimefunItemStack("SIZED_BLOCK1",
 			Material.DEEPSLATE_COAL_ORE,
-	        "&rSized Block &7(Tier 1 3x3)",
-	        "&l§4Put to Block Assigner",
+	        "&r小世界空间 &7(T1 3x3)",
+	        "&l§4放入空间绑定器",
 	        LoreBuilder.powerPerSecond(256)
 	    );
 	public static final SlimefunItemStack SIZED_BLOCK2 = new SlimefunItemStack("SIZED_BLOCK2",
 	        Material.DEEPSLATE_COAL_ORE,
-	        "&rSized Block &7(Tier 2 6x6)",
-	        "&l§4Put to Block Assigner",
+	        "&r小世界空间 &7(T2 6x6)",
+	        "&l§4放入空间绑定器",
 	        LoreBuilder.powerPerSecond(512)
 	    );
 	public static final SlimefunItemStack SIZED_BLOCK3 = new SlimefunItemStack("SIZED_BLOCK3",
 			Material.DEEPSLATE_COAL_ORE,
-	        "&rSized Block &7(Tier 3 9x9)",
-	        "&l§4Put to Block Assigner",
+	        "&r小世界空间 &7(T3 9x9)",
+			"&l§4放入空间绑定器",
 	        LoreBuilder.powerPerSecond(768)
 	    );
 	public static final SlimefunItemStack SIZED_BLOCK4 = new SlimefunItemStack("SIZED_BLOCK4",
 			Material.DEEPSLATE_COAL_ORE,
-	        "&rSized Block &7(Tier 4 12x12)",
-	        "&l§4Put to Block Assigner",
+	        "&r小世界空间 &7(Tier 4 12x12)",
+			"&l§4放入空间绑定器",
 	        LoreBuilder.powerPerSecond(1024)
 	    );
 	public static final SlimefunItemStack TELEPORT = new SlimefunItemStack("TELEPORT",
 	        Material.GOLD_BLOCK,
-	        "TELEPORT",
+	        "传送",
 	        ""
 	    );
 	
 	public static final SlimefunItemStack BLOCK_ASSIGNER = new SlimefunItemStack("BLOCK_ASSIGNER",
 	        Material.DIAMOND_BLOCK,
-	        "&rBlock Assigner",
-	        "&7Put Sized Block in this machine to assign custom id",
+	        "&r空间绑定器",
+	        "&7将小世界空间放入该机器",
+			"&7以进行绑定",
 	        LoreBuilder.machine(MachineTier.AVERAGE, MachineType.MACHINE),
 	        LoreBuilder.powerPerSecond(12),
 	        LoreBuilder.powerBuffer(512)
@@ -60,8 +61,8 @@ public class Items {
 	
 	public static final SlimefunItemStack SPACE_STABILIZER = new SlimefunItemStack("SPACE_STABILIZER",
 	        Material.BLACK_WOOL,
-	        "&rSpace Stabilizer",
-	        "&7Stabilizes space in block - main part",
+	        "&r空间稳定器",
+	        "&7稳定方块内部的空间",
 	        LoreBuilder.machine(MachineTier.AVERAGE, MachineType.MACHINE),
 	        LoreBuilder.powerPerSecond(12),
 	        LoreBuilder.powerBuffer(512)
@@ -69,12 +70,12 @@ public class Items {
 	
 	public static final SlimefunItemStack IMPORT_BUS = new SlimefunItemStack("IMPORT_BUS",
 	        Material.STONE,
-	        "IMPORT_BUS",
+	        "输入接口",
 	        ""
 	    );
 	public static final SlimefunItemStack EXPORT_BUS = new SlimefunItemStack("EXPORT_BUS",
 	        Material.MAGMA_BLOCK,
-	        "EXPORT_BUS",
+	        "输出接口",
 	        ""
 	    );
 	
@@ -82,8 +83,9 @@ public class Items {
 	public static final SlimefunItemStack SPACE_INTERFACE = new SlimefunItemStack("SPACE_INTERFACE",
 			//https://minecraft-heads.com/custom-heads/miscellaneous/57245-file-explorer
 			"eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzczZThiZDNjNDNjNDUxNGM3NjQ4MWNhMWRhZjU1MTQ5ZGZjOTNiZDFiY2ZhOGFiOTQzN2I5ZjdlYjMzOTJkOSJ9fX0=",
-	        "&rSpace Interface",
-	        "&7(way to push items in and out of the space)",
+	        "&r空间接口",
+	        "&7将物品送入小世界",
+			"&7或将物品从中取出",
 	        LoreBuilder.machine(MachineTier.AVERAGE, MachineType.MACHINE),
 	        LoreBuilder.powerPerSecond(12),
 	        LoreBuilder.powerBuffer(512)
